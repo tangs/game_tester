@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:game_tester/main.dart';
 import 'package:game_tester/network/sender.dart';
+import 'package:game_tester/pages/lobby/hud.dart';
 import 'package:game_tester/pages/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -92,8 +93,9 @@ class LobbyScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              const Row(
-                  children: [Expanded(child: Center(child: Text('Top')))]),
+              // const Row(
+              //     children: [Expanded(child: Center(child: Text('Top')))]),
+              const HUD(nickname: 'nickname', money: 123456),
               const Spacer(),
               Expanded(child: buildGames(context)),
               const Spacer(),

@@ -12,7 +12,8 @@ import 'package:http/http.dart';
 class Sender {
   static final Sender _singleton = Sender._internal();
 
-  final String _serverAddress = 'api.h5navi.com:4433';
+  // final String _serverAddress = 'api.h5navi.com:4433';
+  final String _serverAddress = 'api.eternal.bet:4433';
   int _token = -1;
   final Map<String, String> _headers = {
     HttpHeaders.contentTypeHeader: 'application/json',

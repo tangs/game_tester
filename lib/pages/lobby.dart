@@ -23,7 +23,7 @@ class LobbyScreen extends StatelessWidget {
     'game-999',
   ];
   LobbyScreen({super.key}) {
-    foo();
+    // foo();
   }
 
   void foo() async {
@@ -36,12 +36,11 @@ class LobbyScreen extends StatelessWidget {
   ListView buildGames(BuildContext context) {
     return ListView.builder(
         scrollDirection: Axis.horizontal,
+        physics: const AlwaysScrollableScrollPhysics(),
         itemCount: entries.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-              onTap: () {
-                EasyLoading.showToast('on tap ${entries[index]}');
-              },
+              onTap: () => EasyLoading.showToast('on tap ${entries[index]}'),
               child: Container(
                 width: 240,
                 color: Color.fromARGB(255, Random().nextInt(255),
@@ -53,8 +52,9 @@ class LobbyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.blue.shade100,
+    return SafeArea(
+      child: Container(
+        color: Theme.of(context).primaryColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
@@ -66,6 +66,8 @@ class LobbyScreen extends StatelessWidget {
             const Row(
                 children: [Expanded(child: Center(child: Text('Bottom')))]),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

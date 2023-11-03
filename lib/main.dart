@@ -16,13 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue.shade400),
-        brightness: Brightness.light,
-        primaryColor: Colors.lightBlue[400],
-        useMaterial3: true,
-      ),
-      home: SafeArea(child: LaunchScreen()),
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue[700]),
+      home: LaunchScreen(),
       builder: EasyLoading.init(),
     );
   }
